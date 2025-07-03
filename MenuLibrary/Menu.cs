@@ -26,14 +26,12 @@ public class Menu : IItem
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Le choix <{choice}> n'est pas une lettre");
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Thread.Sleep(1000);
             }
             else if (!Items.TryGetValue(key, out var item))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Le choix <{key}> n'existe pas !");
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Thread.Sleep(1000);
             }
             else if (key == Items.Last().Key)
             {
@@ -43,6 +41,11 @@ public class Menu : IItem
             {
                 Console.Clear();
                 item.Start();
+            }
+            
+            if (!exitProgram)
+            {
+                Thread.Sleep(1000);
             }
         }
     }
