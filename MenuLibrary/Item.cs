@@ -21,4 +21,29 @@ public class Item : IItem
     {
         Action?.Execute();
     }
+
+    public override string ToString()
+    {
+        return Label;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(this, obj))
+        {
+            return true;
+        }
+        
+        if (obj is not Item other)
+        {
+            return false;
+        }
+
+        return Label == other.Label;
+    }
+
+    public override int GetHashCode()
+    {
+        return Label?.GetHashCode() ?? 0;
+    }
 }
