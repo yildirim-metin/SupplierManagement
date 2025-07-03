@@ -30,3 +30,11 @@ mainMenu.AddItem('d', episode4);
 mainMenu.AddItem('e', secondMenu);
 
 mainMenu.Start();
+
+Menu menu = new MenuBuilder("test")
+    .Item('a', "test 1", action)
+    .Menu('b', new MenuBuilder("test 2").Item('a', "test 2.1", action).Build())
+    .Item('c', "test 3", action)
+    .Build();
+
+menu.Start();
