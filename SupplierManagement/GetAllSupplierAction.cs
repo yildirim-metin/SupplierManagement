@@ -19,5 +19,8 @@ class GetAllSupplierAction : IAction
         {
             Console.WriteLine(supplier);
         }
+
+        Console.Write("Appuyer sur une touche pour revenir au menu principale...");
+        Console.ReadKey();
     }
 }

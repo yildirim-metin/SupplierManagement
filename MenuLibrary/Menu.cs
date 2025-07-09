@@ -42,11 +42,6 @@ public class Menu : IItem
                 Console.Clear();
                 item.Start();
             }
-            
-            if (!exitProgram)
-            {
-                Thread.Sleep(1000);
-            }
         }
     }
 
