@@ -40,7 +40,7 @@ class AddSupplierAction : IAction
             email = Console.ReadLine();
         }
 
-        int id = SupplierList.nextIdSupplier++;
+        int id = ++SupplierList.nextIdSupplier;
         Supplier supplier = new(id, supplierName, phoneNumber, email);
 
         _supplierList.AddSupplier(supplier);
