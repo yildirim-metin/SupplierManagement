@@ -43,6 +43,12 @@ class AddSupplierAction : IAction
         int id = ++SupplierList.nextIdSupplier;
         Supplier supplier = new(id, supplierName, phoneNumber, email);
 
-        _supplierList.AddSupplier(supplier);
+        Console.Write("Souhaitez-vous valider les informations entrées (O/N) : ");
+        string? saveSupplier = Console.ReadLine();
+
+        if (saveSupplier != null && (saveSupplier == "O" || saveSupplier == "o"))
+        {
+            _supplierList.AddSupplier(supplier);
+        }
     }
 }
