@@ -4,7 +4,12 @@ public class Item : IItem
 {
     public string Label { get; }
 
-    public IAction Action { private get; set; }
+    public IAction? Action { private get; set; }
+
+    public Item(string label)
+    {
+        Label = label;
+    }
 
     public Item(string label, IAction action)
     {
@@ -14,7 +19,7 @@ public class Item : IItem
 
     public void Start()
     {
-        Action.Execute();
+        Action?.Execute();
     }
 
     public override string ToString()
